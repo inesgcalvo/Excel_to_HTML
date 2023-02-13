@@ -1,10 +1,10 @@
 Sub Macro_XLS_to_HTML()
 
-' Define your variables.
+'Define the variables.
 Dim iRow As Long
 Dim iPage As Integer
    
-'Start on the 2nd row to avoid the header.
+'Start on the 2nd row to avoid the 1st row, that contains the header.
 iRow = 2
 
 'Start the Loop
@@ -31,7 +31,8 @@ Print #1, "<body>"
       Print #1, "<br><text href=""" & iPage & ".html"">" & Cells(iRow, 1).Value & "</text>"
             iPage = iPage + 1
     End If
-      
+ 
+'Each row is presented isolated in order to modify its characteristics individually if desired
     If Not IsEmpty(Cells(iRow, 2)) Then
         Print #1, "<br><h1 href=""" & iPage & ".html"">" & Cells(iRow, 2).Value & "</h1>"
             iPage = iPage + 1
