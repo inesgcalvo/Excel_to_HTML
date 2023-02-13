@@ -1,6 +1,5 @@
 Sub Macro_XLS_to_HTML()
 
-' Intentar crear HTML desde este documento Excel
 ' Define your variables.
 Dim iRow As Long
 Dim iPage As Integer
