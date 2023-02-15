@@ -18,13 +18,20 @@ Close
    
 'Print the HTML scaffolding
 Open sFile For Output As #1
-Print #1, "<html>"
-Print #1, "<head>"
-Print #1, "<style type=""text/css"">"
-Print #1, "  body { font-size:12px;font-family:georgia } "
-Print #1, "</style>"
+Print #1, "<!doctype html>"
+Print #1, "<html lang=""es"">"
+Print #1, " <head>"
+Print #1, "     <meta charset=""UTF-8"">"
+Print #1, "     <meta name=""docsearch:language"" Content =""es"">"
+Print #1, "     <meta name=""viewport"" content=""width=device-width, initial-scale=1"">"
+Print #1, "     <meta name=""Author"" content=""Inés G.Calvo"">"
+Print #1, "     <link rel=""stylesheet"" href =""css/main.css"">"
+Print #1, "     <script src=""js/main.js""></script>"
 Print #1, "</head>"
 Print #1, "<body>"
+Print #1, "<header>"
+Print #1, "</header>"
+Print #1, "<section>"
 
 'Translate the columns of the table
     If Not IsEmpty(Cells(iRow, 1)) Then
@@ -124,9 +131,11 @@ Print #1, "<body>"
     End If
     
 'Add ending HTML tags
+    Print #1, "</section>"
     Print #1, "</body>"
     Print #1, "</html>"
     Close
+      
 'Add this line to the code if you want Excel to open all the files
 'Shell "hh " & vbLf & sFile, vbMaximizedFocus
     
